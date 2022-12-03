@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fatpat">
+    <meta name="author" content="Siddhu Pendyala & Ryan Lee">
+    <meta property="og:description" content="Fatpat">
+    <meta property="og:title" content="Fatpat">
+    <title>Fatpat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+</head>
+<body>
+  Welcome to <strong>Fatpat</strong>!
+  Game will now commence!
+</body>
+<form>
+    <input id="quantity" class="qty" type="text" placeholder="quantity" />
+    </form>
+
+    <!--display total cost here--> 
+    <span>The Cost is: totalcost</span>
+<script>
+  var cost = 25;
+// declaring these globally below helps in further use
+var input = document.getElementsByTagName("input")[0],
+    span = document.getElementsByTagName("span")[0];
+
+function update(value) {
+    var totalcost = (cost * value); // you had redeclared `cost` here in local scope
+    span.innerHTML = totalcost; // set value of `totalcost` to `span` using `.innerHTML` property
+}
+
+input.oninput =  function(){                // when something in input
+    var val = parseFloat(input.value, 10); // get the value from `input` 
+    update(val); // update the value of `span`
+};
+  </script>
+
+</html>
