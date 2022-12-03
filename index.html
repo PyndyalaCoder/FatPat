@@ -15,29 +15,27 @@
 </head>
 <body>
   Welcome to <strong>Fatpat</strong>!
+  <br>
   Game will now commence!
+  <br>
+  What is your name?:
+  
 </body>
-<form>
-    <input id="quantity" class="qty" type="text" placeholder="quantity" />
-    </form>
 
-    <!--display total cost here--> 
-    <span>The Cost is: totalcost</span>
-<script>
-  var cost = 25;
-// declaring these globally below helps in further use
-var input = document.getElementsByTagName("input")[0],
-    span = document.getElementsByTagName("span")[0];
-
-function update(value) {
-    var totalcost = (cost * value); // you had redeclared `cost` here in local scope
-    span.innerHTML = totalcost; // set value of `totalcost` to `span` using `.innerHTML` property
+<HEAD>
+<TITLE>Test Input</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testResults (form) {
+    var TestVar = form.inputbox.value;
+    alert ("Hi: " + TestVar+ "!");
 }
-
-input.oninput =  function(){                // when something in input
-    var val = parseFloat(input.value, 10); // get the value from `input` 
-    update(val); // update the value of `span`
-};
-  </script>
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter something in the box: <BR>
+<INPUT TYPE="text" NAME="inputbox" VALUE="name"><P>
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
+</FORM>
+</BODY>
 
 </html>
